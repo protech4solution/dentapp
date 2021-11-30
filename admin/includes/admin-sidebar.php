@@ -16,6 +16,10 @@
                         <li>
                             <a href="user.php"><i class="fas fa-angle-right"></i> User</a>
                         </li>
+
+                        <li>
+                            <a href="patient.php"><i class="fas fa-angle-right"></i> Patient </a>
+                        </li>
                     </ul>
                 </li>
                 <li>
