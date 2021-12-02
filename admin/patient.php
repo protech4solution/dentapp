@@ -19,6 +19,7 @@
     <?php 
         require_once('includes/main-header.php'); 
         require_once('includes/connection.php');
+        require_once('includes/functions.php');
 
         if (isset($_GET['n'])){
             $n = $_GET['n'];
@@ -132,6 +133,7 @@
                                                 <th>AGE</th>
                                                 <th>ID NUMBER</th>
                                                 <th>PHONE</th>
+                                                <th>STATUS</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -154,7 +156,7 @@
                                                 <td><?=++$num;?></td>
                                                 <td><?=$rw1['mrn'];?></td>
                                                 <td><?=$rw1['name'];?></td>
-                                                <td><?=$rw1['gender'];?></td>
+                                                <td><?=getGender($rw1['gender']);?></td>
                                                 <td><?=$rw1['birthdate'];?></td>
                                                 <td><?=$rw1['age'];?></td>
                                                 <td><?=$rw1['idnumber'];?></td>
@@ -237,10 +239,10 @@
                                 <div class="card">
                                     <div class="card-header">Patient bulk upload</div>
                                     <div class="card-body">
-                                        <form accept-charset="utf-8" method="post" action="" enctype="multipart/form-data">
+                                        <form accept-charset="utf-8" method="post" action="patient-bulk-upload.php" enctype="multipart/form-data">
                                             <div class="mb-3">
                                                 <label for="password" class="form-label">Upload user file. <small>File must be in <b>*.csv</b> format.</small>.</label>
-                                                <input type="file" name="file" placeholder="Full name" class="form-control" >
+                                                <input type="file" name="csv_data" placeholder="Full name" class="form-control" >
                                             </div>
 
                                             <div class="mb-3">
@@ -248,6 +250,7 @@
                                                 <input type="reset" class="btn btn-secondary" value="Reset">
                                             </div>
                                         </form>
+                                        <small><a href="../uploads/patient-template01.csv">Click here</a> to download patient bulk upload template.</small>
                                     </div>
                                 </div>
                             </div>

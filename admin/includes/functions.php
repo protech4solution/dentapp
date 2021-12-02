@@ -165,4 +165,13 @@
         return array($row['outcome'], $row['description']);
     }
 
+    function getGender ($id){
+        if ($id == 'M'){
+            echo 'Male';
+        } else if ($id == 'F'){
+            echo 'Female';
+        } else {
+
+        }
+    }
 ?>
